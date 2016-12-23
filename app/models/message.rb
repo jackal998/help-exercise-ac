@@ -4,6 +4,9 @@ class Message < ApplicationRecord
 
   has_many :comments, :dependent => :destroy
 
+  has_many :likes, :dependent => :destroy
+  has_many :subscriptions, :dependent => :destroy
+
   scope :pending, -> { where( :status => "pending" ) }
   scope :completed, -> { where( :status => "completed" ) }
 

@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :messages
   has_many :comments
 
+  has_many :likes, :dependent => :destroy
+  has_many :subscriptions, :dependent => :destroy
+
   def display_name
     self.email.split("@").first
   end
