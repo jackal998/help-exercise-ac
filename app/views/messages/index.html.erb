@@ -24,7 +24,7 @@
 </tr>
 
 <% @messages.each do |msg| %>
-  <tr>
+  <tr id="msg_<%= msg.id %>">
     <td><%= link_to msg.title, message_path(msg) %></td>
     <td><%= msg.status %></td>
     <td><%= msg.category_name %></td>
@@ -34,7 +34,7 @@
     <td>
       <% if msg.user == current_user %>
         <%= link_to "Edit", edit_message_path(msg) %>
-        <%= link_to "Delete", message_path(msg), :method => :delete, :data => { :confirm => "Are u sure?"} %>
+        <%= link_to "Delete", message_path(msg), :method => :delete, :data => { :confirm => "Are u sure?"}, :remote => true %>
       <% end %>
     </td>
   </tr>
