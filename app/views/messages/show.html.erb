@@ -17,6 +17,20 @@
 
 <% end %>
 
+<h3>likes:</h3>
+
+<% @message.likes.each do |like| %>
+  <p><%= like.user.email %></p>
+<% end %>
+
+<h3>subscriptions:</h3>
+
+<% @message.subscriptions.each do |subscription| %>
+  <p><%= subscription.user.email %></p>
+<% end %>
+
+<br /><br />
+
 <% @message.comments.each do |comment| %>
 
   <div id="com_<%= comment.id %>">
