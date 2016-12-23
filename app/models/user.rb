@@ -12,7 +12,7 @@ class User < ApplicationRecord
   end
 
   def posts_count
-    # TODO: 請完成我
+    comments.size + messages.size
   end
 
   def words_count
